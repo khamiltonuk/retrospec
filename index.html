@@ -9,8 +9,14 @@
 </head>
 <body>
     <ul id="messages"></ul>
-    <form action="" id="username">
-        <input id="m" name="username" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="overlay" aria-hidden="false">
+        <form action="" id="capture-username">
+            <input id="m" name="username" autocomplete="off" /><button>Send</button>
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/init.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>
