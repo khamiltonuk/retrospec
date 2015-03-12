@@ -1,18 +1,51 @@
 <!doctype html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Retrospec</title>
-    <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <ul id="messages"></ul>
+    <header>
+
+    </header>
+
+    <!-- Retrospective Board -->
+    <div id="retro-board">
+
+        <div id="panel-happy" class="panel">
+            <h2>happy</h2>
+            <ul></ul>
+        </div>
+
+        <div id="panel-unhappy" class="panel">
+            <h2>unhappy</h2>
+            <ul></ul>
+        </div>
+
+        <div id="panel-indifferent" class="panel">
+            <h2>indifferent</h2>
+            <ul></ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="username">Username: <span></span><p>
+    </footer>
+
+
+    <!-- Overlay to capture username -->
     <div class="overlay" aria-hidden="false">
-        <form action="" id="capture-username">
-            <input id="m" name="username" autocomplete="off" /><button>Send</button>
-        </form>
+        <div class="overlay-content">
+            <form action="" id="capture-username">
+                <div class="input-container">
+                    <label for="m" class="hidden">username</label>
+                    <input id="m" name="username" placeholder="username" autocomplete="off" /><button class="primary-btn">Send</button>
+                </div>
+                <p class="error-messsage hidden" aria-hidden="true">Please type in a username to contine</p>
+            </form>
+        </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>

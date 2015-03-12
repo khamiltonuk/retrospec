@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'aaarghnormal', verdana; }
+
+@font-face {
+  font-family: 'aaarghnormal';
+  src: url("../fonts/Aaargh-webfont.eot");
+  src: url("../fonts/Aaargh-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Aaargh-webfont.woff") format("woff"), url("../fonts/Aaargh-webfont.ttf") format("truetype"), url("../fonts/Aaargh-webfont.svg#aaarghnormal") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+h2 {
+  color: #fff; }
+
+.primary-btn {
+  border: 0;
+  background: grey;
+  padding: 10px; }
+
+input {
+  border: 0;
+  padding: 10px;
+  height: 37px; }
+
+.input-container {
+  background: white; }
+  .input-container .input {
+    width: 100%; }
+  .input-container button {
+    float: right;
+    margin: 1px; }
+
+/** utils **************************/
+.visually-hidden {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.hidden {
+  display: none; }
+
+/** panels and items ***************/
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  text-transform: capitalize; }
+
+.panel {
+  width: 33%;
+  float: left;
+  min-height: 200px;
+  background: coral; }
+  .panel h2 {
+    background: rgba(255, 255, 255, 0.1); }
+
+.panel-wrapper {
+  width: 100px;
+  height: 100px; }
+
+/** items ****************/
+ul {
+  list-style: none; }
+
+li {
+  width: 100px;
+  min-height: 100px;
+  background: yellow;
+  padding: 5px;
+  float: left;
+  position: relative;
+  margin: 0 10px 10px 0; }
+
+li button.delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  background: white;
+  text-align: center; }
+
+li button[type='submit'] {
+  width: 100%;
+  background: white;
+  padding: 10px 0;
+  bottom: 0;
+  position: absolute;
+  border: 0;
+  left: 0;
+  text-align: center; }
+
+li input {
+  width: 100%;
+  border: 0;
+  background: none; }
+
+/** error handling ****************/
+.error-messsage {
+  padding: 10px;
+  margin: 10Px 0;
+  background: pink;
+  border: 1ps solid red; }
+
+/** Overlay ***********************/
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9; }
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*# sourceMappingURL=styles.css.map */
