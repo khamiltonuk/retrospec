@@ -14,31 +14,32 @@
     <div id="retro-board" class="cf">
 
         <div id="panel-happy" class="panel">
-            <h2>happy</h2>
+            <h2>happy<span class="spin-plus"><span></span></span></h2>
             <ul></ul>
         </div>
 
         <div id="panel-unhappy" class="panel">
-            <h2>unhappy</h2>
+            <h2>unhappy<span class="spin-plus"><span></span></span></h2>
             <ul></ul>
         </div>
 
         <div id="panel-indifferent" class="panel">
-            <h2>indifferent</h2>
+            <h2>indifferent<span class="spin-plus"><span></span></span></h2>
             <ul></ul>
         </div>
 
     </div>
 
     <footer>
-        <p class="username">Username: <span></span><p>
+        <p class="username">Hiya <span></span><p>
+        <button id="reset-username">reset<button>
     </footer>
 
 
     <!-- Overlay to capture username -->
     <div class="overlay" aria-hidden="false">
         <div class="overlay-content">
-            <form action="" id="capture-username">
+            <form action="" id="capture-username" class="">
                 <div class="input-container">
                     <label for="m">username</label>
                     <input id="m" name="username" placeholder="username" autocomplete="off" /><button class="primary-btn">Send</button>

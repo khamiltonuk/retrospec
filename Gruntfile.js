@@ -57,7 +57,17 @@ module.exports = function (grunt) {
                 }
             }
         },
-
+        scsslint: {
+            allFiles: [
+                'assets/scss/*.scss',
+            ],
+            options: {
+                bundleExec: true,
+                config: '.scss-lint.yml',
+                reporterOutput: 'scss-lint-report.xml',
+                colorizeOutput: true
+            },
+        },
         watch: {
             uglify:  {
                 files: ['assets/js/init.js'],
@@ -65,7 +75,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['assets/scss/*.scss'],
-                tasks: ['sass:dev'],
+                tasks: ['scsslint', 'sass:dev'],
                 options: {
                     spawn: false
                 }
@@ -85,8 +95,10 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     //grunt.registerTask('images', ['imagemin']);
     grunt.registerTask('compile', ['sass:dist', 'uglify']);
-    grunt.registerTask('serve', ['express:dev', 'uglify', 'sass:dev', 'watch']);
+    // grunt.registerTask('default', ['scsslint']);
+    grunt.registerTask('serve', ['express:dev', 'uglify', 'sass:dev',                                                                  'watch']);
 };

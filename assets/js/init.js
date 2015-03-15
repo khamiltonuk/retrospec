@@ -1,7 +1,9 @@
 (function(){
 
     'use strict';
-    var username = "",
+
+
+    var username = localStorage.getItem("localUsername"),
         retroMembers = [],
         $panels = $('.panel'),
         $overlay = $('.overlay'),
@@ -22,33 +24,44 @@
         username = $('#m').val().trim();
         //exsistingUser = retroMembers[username].length;
         if (username !== "" ){//} && exsistingUser !== -1){
+            localStorage.setItem('localUsername', username);
             closeOverlay();
-            init();
+            startRetroBoard();
         }else{
-            $(this).addClass('error');
+            $(this).addClass('animated shake');
             $('.error-messsage').removeClass('hidden').attr('aria-hidden', 'false');
         }
-
-
     });
+
     $('#m').on('focus', function(){
         $(this).siblings('label').addClass('active-input');
         $(this).attr('placeholder','')
     });
+
     $('#m').on('blur', function(){
         $(this).siblings('label').removeClass('active-input');
         $(this).attr('placeholder','username')
-    })
+    });
 
-
-    var init = function(){
+    var startRetroBoard = function(){
         renderUsername();
         insertDraft();
 
 
         $('#retro-board').on('blur','.panel input', blurInput );
         $('#retro-board').on('keyup', 'input', activeItem );
+        $('#reset-username').on('click', resetUsername );
     };
+
+
+
+
+
+    var resetUsername = function(){
+        if(username){
+            localStorage.removeItem('localUsername');
+        }
+    }
 
     var blurInput = function(e){
         inputValue = $(this).val();
@@ -97,5 +110,24 @@
     var closeOverlay = function(){
         $overlay.addClass('hidden').attr('aria-hidden', 'false');
     };
+
+    var init = function(){
+        console.log("username: " + username);
+        if(username){
+            closeOverlay();
+            startRetroBoard();
+        }else{
+            startRetroBoard();
+        }
+    };
+
+    init();
+
+    io.on('connection', function(socket){
+        console.log('a user connected');
+        socket.on('disconnect', function(){
+            console.log('user disconnected');
+        });
+    });
 
 })();
