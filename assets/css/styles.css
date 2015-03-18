@@ -199,6 +199,8 @@ label.active-input {
 footer {
   padding: 10px;
   background: lightblue; }
+  footer button {
+    float: right; }
 
 /** clearfix ***********************/
 .cf:before,
